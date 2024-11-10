@@ -2,7 +2,7 @@
 {
     static void Main()
     {
-        
+
         string[] fileNames = new string[]
         {
             "10.txt", "11.txt", "12.txt", "13.txt", "14.txt", "15.txt", "16.txt", "17.txt",
@@ -15,6 +15,15 @@
         List<string> badDataList = new List<string>();
         //ліст з оефрвловами..
         List<string> overflowList = new List<string>();
-        
+        foreach (string fileName in fileNames)
+        {
+            try
+            {
+                
+            }
+            catch (FileNotFoundException) { noFileList.Add(fileName); }
+            catch (FormatException) { badDataList.Add(fileName); }
+            catch (OverflowException) { overflowList.Add(fileName); }
+        }
     }
 }
