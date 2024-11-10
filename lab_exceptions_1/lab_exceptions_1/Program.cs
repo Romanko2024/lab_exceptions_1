@@ -45,7 +45,7 @@
                 }
                 catch (OverflowException)
                 {
-                    throw new OverflowException(); 
+                    overflowList.Add(fileName);
                 }
             }
             catch (FileNotFoundException) { noFileList.Add(fileName); }
