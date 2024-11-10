@@ -15,6 +15,8 @@
         List<string> badDataList = new List<string>();
         //ліст з оефрвловами..
         List<string> overflowList = new List<string>();
+        //добутки
+        List<int> validProducts = new List<int>();
         foreach (string fileName in fileNames)
         {
             try
@@ -33,8 +35,10 @@
                 }
                 catch (FormatException)
                 {
-                    throw new FormatException();  //якщо не вишло парсити числа
+                    throw new FormatException();  //якщо не вийшло парсити числа
                 }
+                int product = num1 * num2;
+                validProducts.Add(product);
             }
             catch (FileNotFoundException) { noFileList.Add(fileName); }
             catch (FormatException) { badDataList.Add(fileName); }
