@@ -53,5 +53,9 @@
             catch (OverflowException) { overflowList.Add(fileName); }
             
         }
+        //запис результатів у файли
+        File.WriteAllLines("no_file.txt", noFileList);
+        File.WriteAllLines("bad_data.txt", badDataList);
+        File.WriteAllLines("overflow.txt", overflowList);
     }
 }
