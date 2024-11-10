@@ -9,5 +9,12 @@
             "18.txt", "19.txt", "20.txt", "21.txt", "22.txt", "23.txt", "24.txt", "25.txt",
             "26.txt", "27.txt", "28.txt", "29.txt"
         };
+        //ліст з відсутніми файлами
+        List<string> noFileList = new List<string>();
+        //ліст з некоректними данними у файлі
+        List<string> badDataList = new List<string>();
+        //ліст з оефрвловами..
+        List<string> overflowList = new List<string>();
+        
     }
 }
