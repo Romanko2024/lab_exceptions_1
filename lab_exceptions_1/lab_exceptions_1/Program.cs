@@ -19,7 +19,8 @@
         {
             try
             {
-                
+                string[] lines = File.ReadAllLines(fileName);
+                int num1, num2;
             }
             catch (FileNotFoundException) { noFileList.Add(fileName); }
             catch (FormatException) { badDataList.Add(fileName); }
