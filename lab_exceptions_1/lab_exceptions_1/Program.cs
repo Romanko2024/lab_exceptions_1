@@ -53,9 +53,23 @@
             catch (OverflowException) { overflowList.Add(fileName); }
             
         }
-        //запис результатів у файли
-        File.WriteAllLines("no_file.txt", noFileList);
-        File.WriteAllLines("bad_data.txt", badDataList);
-        File.WriteAllLines("overflow.txt", overflowList);
+        try
+        {
+            //запис результатів у файли
+            File.WriteAllLines("no_file.txt", noFileList);
+            File.WriteAllLines("bad_data.txt", badDataList);
+            File.WriteAllLines("overflow.txt", overflowList);
+            //
+            double average = validProducts.Average();
+            Console.WriteLine($"Середнє арифметичне: {average}");
+        }
+        catch (IOException ex)
+        {
+            Console.WriteLine($"Помилка при створенні або записі файлів: {ex.Message}");
+        }
+        catch (InvalidOperationException ex)
+        {
+            Console.WriteLine($"Не вдалося обчислити добутки. {ex.Message}");
+        }
     }
 }
