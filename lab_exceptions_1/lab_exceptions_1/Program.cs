@@ -37,12 +37,21 @@
                 {
                     throw new FormatException();  //якщо не вийшло парсити числа
                 }
-                int product = num1 * num2;
-                validProducts.Add(product);
+
+                try
+                {
+                    int product = num1 * num2;
+                    validProducts.Add(product);
+                }
+                catch (OverflowException)
+                {
+                    throw new OverflowException(); 
+                }
             }
             catch (FileNotFoundException) { noFileList.Add(fileName); }
             catch (FormatException) { badDataList.Add(fileName); }
             catch (OverflowException) { overflowList.Add(fileName); }
+            
         }
     }
 }
