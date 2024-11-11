@@ -22,22 +22,10 @@
             try
             {
                 string[] lines = File.ReadAllLines(fileName);
-                int num1, num2;
-                
-                try
-                {
-                    num1 = int.Parse(lines[0]);
-                    num2 = int.Parse(lines[1]);
-                }
-                catch (IndexOutOfRangeException)
-                {
-                    throw new FormatException();  //якщо щось не так з рядками
-                }
-                catch (FormatException)
-                {
-                    throw new FormatException();  //якщо не вийшло парсити числа
-                }
-
+                                              
+                int num1 = int.Parse(lines[0]);
+                int num2 = int.Parse(lines[1]);                          
+                //
                 try
                 {
                     int product = num1 * num2;
@@ -47,6 +35,7 @@
                 {
                     overflowList.Add(fileName);
                 }
+                //
             }
             catch (FileNotFoundException) { noFileList.Add(fileName); }
             catch (FormatException) { badDataList.Add(fileName); }
